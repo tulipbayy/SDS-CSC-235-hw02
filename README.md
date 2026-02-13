@@ -1,5 +1,7 @@
 # SDS-CSC-235-hw02: Communicating Data
 
+# Authors: Eva Soboleva, Bayansulu Tulepbayeva
+
 ## Outline
 
 This repository contains the starter code and instructions you will need for this assignment; fork and then clone it to your machine.  

@@ -1,5 +1,7 @@
 # HW02 Rubric Checklist
 
+# Authors: Eva Soboleva, Bayansulu Tulepbayeva
+
 Listed below are various aspects of the assignment. When you turn in your work, please indicate the status of each item:
 
 - **YES** : indicates that the item is fully complete
