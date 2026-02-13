@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel = "stylesheet" href = "style.css">
+    <title>New York City Leading Causes of Death</title>
+</head>
+<body>
+    <div id = "landing">
+        <h1 class="title">Exploratory Data Analysis: NYC Leading Causes of Death</h1>
+        <h2 class="title">Authors: Eva Soboleva, Bayansulu Tulepbayeva</h2>
+    </div>
+    <section>
+        <h2>About the Dataset</h2>
+        <p>
+            This dataset comes from NYC Open Data and contains information 
+            about leading causes of death in New York City from 2007–2021.
+        </p>
+
+        <p>
+            The data includes number of deaths, death rates, age-adjusted death rates,
+            sex, race/ethnicity, and cause of death.
+        </p>
+
+        <p>
+            <strong>Potential Biases:</strong>
+            Data may reflect disparities in healthcare access, reporting inconsistencies,
+            racial classification inconsistencies (e.g., "Black Non-Hispanic" vs 
+            "Non-Hispanic Black"), and underreporting in certain populations.
+        </p>
+
+        <a href="https://opendata.cityofnewyork.us/" target="_blank">
+            View Data Source
+        </a>
+    </section>
+    <section>
+    <h2>Summary Statistics</h2>
+
+    <h3>Quantitative Variables</h3>
+
+    <div class="stat-box">
+        <h4>Deaths</h4>
+        <ul>
+            <li><strong>Mean:</strong> 602.96</li>
+            <li><strong>Median:</strong> 220</li>
+            <li><strong>Standard Deviation:</strong> 937.48</li>
+            <li><strong>Minimum:</strong> 5</li>
+            <li><strong>Maximum:</strong> 7050</li>
+            <li><strong>IQR:</strong> 419</li>
+        </ul>
+        <p>
+            The mean number of deaths per record (602.96) is much higher than the median (220), 
+            indicating a strong right-skewed distribution. This suggests that a small number of 
+            causes account for very high death totals, while most causes have relatively fewer 
+            deaths. The large standard deviation and wide range further confirm substantial 
+            variability across causes and demographic groups.
+        </p>
+    </div>
+
+    <div class="stat-box">
+        <h4>Death Rate</h4>
+        <ul>
+            <li><strong>Mean:</strong> 56.26</li>
+            <li><strong>Median:</strong> 20.1</li>
+            <li><strong>Standard Deviation:</strong> 75.60</li>
+            <li><strong>Minimum:</strong> 2.4</li>
+            <li><strong>Maximum:</strong> 491.4</li>
+            <li><strong>IQR:</strong> 66.06</li>
+        </ul>
+        <p>
+            The mean death rate (56.26) is substantially higher than the median (20.1), 
+            again indicating right skew. Most causes have relatively low death rates, 
+            but a few exhibit extremely high rates. The large spread in values reflects 
+            major differences in mortality across diseases and demographic groups.
+        </p>
+    </div>
+
+    <h3>Ordinal Variables</h3>
+
+    <div class="stat-box">
+        <h4>Year</h4>
+        <ul>
+            <li><strong>Mean:</strong> 2014.14</li>
+            <li><strong>Median:</strong> 2014</li>
+            <li><strong>Standard Deviation:</strong> 4.33</li>
+            <li><strong>Minimum:</strong> 2007</li>
+            <li><strong>Maximum:</strong> 2021</li>
+            <li><strong>IQR:</strong> 8</li>
+        </ul>
+        <p>
+            The dataset spans from 2007 to 2021, with a median year of 2014. 
+            The relatively small standard deviation suggests the data is fairly 
+            evenly distributed across years. This variable allows for analysis 
+            of mortality trends over time and helps identify unusual spikes 
+            or changes in later years.
+        </p>
+    </div>
+
+    <div class="stat-box">
+        <h4>Age-Adjusted Death Rate</h4>
+        <ul>
+            <li><strong>Mean:</strong> 53.61</li>
+            <li><strong>Median:</strong> 19.8</li>
+            <li><strong>Standard Deviation:</strong> 68.11</li>
+            <li><strong>Minimum:</strong> 2.5</li>
+            <li><strong>Maximum:</strong> 414.59</li>
+            <li><strong>IQR:</strong> 69.16</li>
+        </ul>
+        <p>
+            The age-adjusted death rate also shows strong right skew, as the mean 
+            (53.61) is much higher than the median (19.8). Some causes have 
+            disproportionately high mortality when adjusting for age. Age-adjusted 
+            rates allow fairer comparisons across populations with different 
+            age distributions.
+        </p>
+    </div>
+
+    <h3>Categorical Variables</h3>
+
+    <div class="stat-box">
+        <h4>Sex</h4>
+        <ul>
+            <li><strong>Female:</strong> 685 records</li>
+            <li><strong>Male:</strong> 688 records</li>
+        </ul>
+        <p>
+            The dataset contains nearly equal numbers of male and female records, 
+            allowing meaningful comparison between sexes. Because the counts are 
+            balanced, observed differences in mortality are less likely to be 
+            caused by data imbalance.
+        </p>
+    </div>
+
+    <div class="stat-box">
+        <h4>Race / Ethnicity</h4>
+        <ul>
+            <li>Asian and Pacific Islander: 333</li>
+            <li>Hispanic: 331</li>
+            <li>White Non-Hispanic: 176</li>
+            <li>Black Non-Hispanic: 178</li>
+            <li>Non-Hispanic Black: 154</li>
+            <li>Non-Hispanic White: 155</li>
+            <li>Not Stated/Unknown: 46</li>
+        </ul>
+        <p>
+            There are inconsistencies in racial labeling (for example, 
+            "Black Non-Hispanic" vs. "Non-Hispanic Black"), which may introduce 
+            classification bias. Some groups appear split across multiple labels, 
+            which could distort comparisons if not cleaned properly. The unequal 
+            distribution across categories suggests careful interpretation is necessary 
+            when comparing mortality across racial and ethnic groups.
+        </p>
+    </div>
+
+    <div class="stat-box">
+        <h4>Leading Causes of Death</h4>
+        <p>
+            The dataset contains 24 distinct leading causes of death. 
+            Some categories such as Diseases of Heart and Malignant Neoplasms 
+            appear frequently and account for large death totals, while 
+            others appear only rarely. This uneven distribution contributes 
+            to the strong right-skew observed in the quantitative variables.
+        </p>
+    </div>
+
+</section>
+<section>
+    <h2>Data Distributions</h2>
+    <h3>Distribution of Deaths</h3>
+    <img src = "deaths_hist.png" alt = "Deaths Histogram" width="500">
+    <p>
+        The histogram of total deaths shows a strong right-skewed distribution. 
+        Most causes of death have relatively low death counts, while a small 
+        number of causes have extremely high totals. This pattern explains why 
+        the mean (602.96) is much higher than the median (220). 
+        The skew suggests that mortality in NYC is concentrated among a few 
+        dominant causes.
+    </p>
+    <h3>Death Rate Distribution</h3>
+    <img src = "death_rate.png" alt = "Death Rate Distribution" width="500">
+    <p>
+        The distribution of death rates mirrors the pattern seen in total deaths. 
+        Most causes have relatively low rates, but several causes show very high 
+        mortality rates. The long right tail supports the large standard deviation 
+        and wide range observed in the summary statistics.
+    </p>
+    <h3>Records by Year</h3>
+    <img src="year_bar.png" alt="Bar Chart of Records by Year" width="500">
+    <p>
+        The number of records appears relatively consistent across years from 
+        2007 to 2021. This suggests that the dataset provides stable annual 
+        coverage, allowing reliable trend analysis over time.
+    </p>
+    <h3>Age-Adjusted Death Rate (Boxplot)</h3>
+    <img src="age_adjusted_boxplot.png" alt="Boxplot of Age-Adjusted Death Rate" width="500">
+    <p>
+        The boxplot shows substantial variability in age-adjusted death rates, 
+        with several high outliers. This confirms that certain causes are 
+        disproportionately deadly even after adjusting for age differences 
+        across populations.
+    </p>
+
+    <h3>Counts by Sex</h3>
+    <img src="sex_bar.png" alt="Bar Chart by Sex" width="500">
+    <p>
+        The dataset includes nearly equal representation of male and female 
+        records, enabling meaningful comparison between sexes in later analyses.
+    </p>
+
+    <h3>Counts by Race/Ethnicity</h3>
+    <img src="race_bar.png" alt="Bar Chart by Race/Ethnicity" width="500">
+    <p>
+        The racial and ethnic distribution shows uneven representation across 
+        categories. Additionally, inconsistencies in labeling (e.g., similar 
+        groups listed separately) highlight potential classification bias 
+        within the dataset.
+    </p>
+</section>
+
+<section>
+    <h2>Relationships in the Data</h2>
+
+    <h3>Top 10 Leading Causes of Death</h3>
+    <img src="top10_causes.png" alt="Top 10 Leading Causes of Death" width="500">
+    <p>
+        The bar chart of the top 10 leading causes shows that Diseases of the Heart 
+        and Malignant Neoplasms (Cancer) account for significantly more deaths 
+        than other causes. The large gap between these and the remaining categories 
+        supports the hypothesis that heart disease is the dominant cause of mortality 
+        in NYC.
+    </p>
+
+    <h3>Average Death Rate Over Time</h3>
+    <img src="death_rate_trend.png" alt="Average Death Rate Over Time" width="500">
+    <p>
+        The line chart shows a noticeable spike in average death rate around 
+        2020–2021. This increase suggests a significant shift in mortality during 
+        this period, likely influenced by the COVID-19 pandemic. This pattern 
+        directly informed the hypothesis predicting increased mortality during 
+        these years.
+    </p>
+
+    <h3>Top 10 Causes by Sex</h3>
+    <img src="top10_by_sex.png" alt="Top 10 Causes by Sex" width="500">
+    <p>
+        Comparing the top 10 causes by sex reveals differences in mortality patterns 
+        between males and females. In several major categories, male death totals 
+        appear higher, suggesting potential sex-based disparities in mortality. 
+        This visualization supports the hypothesis that mortality differs by sex 
+        across major diseases.
+    </p>
+</section>
+
+<section>
+    <h2>Testable Hypotheses</h2>
+
+    <div class="hypothesis">
+        <h3>Hypothesis 1</h3>
+        <p><strong>Diseases of the Heart account for significantly more deaths than other leading causes in New York City.</strong></p>
+        <p>
+            This hypothesis was informed by the visualization of the top 10 leading causes 
+            of death. The bar chart shows a clear gap between Diseases of the Heart and 
+            most other causes, indicating that heart disease consistently ranks as one 
+            of the dominant contributors to mortality. Because the difference in total 
+            deaths appears substantial, this hypothesis can be tested statistically 
+            by comparing mean death counts across causes.
+        </p>
+    </div>
+
+    <div class="hypothesis">
+        <h3>Hypothesis 2</h3>
+        <p><strong>Death rates increased significantly during 2020–2021 compared to previous years.</strong></p>
+        <p>
+            The line chart of average death rate over time shows a noticeable spike 
+            around 2020–2021. This visual trend suggests a significant shift in mortality 
+            during those years. Given the historical context of the COVID-19 pandemic, 
+            this increase appears meaningful and testable by comparing average death 
+            rates before and during this period.
+        </p>
+    </div>
+
+    <div class="hypothesis">
+    <h3>Hypothesis 3</h3>
+    <p><strong>In the majority of leading causes of death, females experience higher total deaths than males.</strong></p>
+    <p>
+        This hypothesis is based on the grouped bar chart comparing the top 10 leading 
+        causes of death by sex. In several categories, female death totals appear higher 
+        than male totals. This pattern suggests a possible overall trend in which females 
+        experience greater mortality counts across diseases. This hypothesis can be 
+        tested by comparing total deaths by sex across all leading causes.
+    </p>
+</div>
+
+    <button id="highlightBtn">Highlight Hypotheses</button>
+</section>
+<script src="index.js"></script>
+</body>
+</body>
+</html>

@@ -1,0 +1,26 @@
+body{
+    font-family: Arial;
+    background-color: #ececec;
+}
+.title{
+    color: #142d4c;
+    font-weight: bold;
+    text-align: center;
+}
+h2{
+    color: #385170;
+}
+h3{
+    color: #407088;
+}
+h4{
+    color: #53a8b6;
+}
+.hypothesis:hover {
+    background-color: #bbe4e9;
+    transition: 0.3s;
+    cursor: pointer;
+}
+section{
+    margin: 100px;
+}
